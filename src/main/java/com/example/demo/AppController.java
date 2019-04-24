@@ -22,7 +22,7 @@ public class AppController {
     		wordList = ktf.wordsToLowercase(wordList);
     		wordList = ktf.wordsSortByLetter('i', 2, wordList);
     		for (String word : wordList) {
-				result += word + " ";
+				result += (word + " ");
 			}
     		
     	}

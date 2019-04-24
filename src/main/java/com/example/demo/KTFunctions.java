@@ -2,6 +2,9 @@ package com.example.demo;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,23 +13,20 @@ public class KTFunctions implements KT3 {
 
 	@Override
 	public String openFile(String filename) {
-		Scanner in = null;
+
+		byte[] encoded;
 		try {
-			in = new Scanner(new FileReader(filename));
-		} catch (FileNotFoundException e) {
+			encoded = Files.readAllBytes(Paths.get(filename));
+			return new String(encoded);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		StringBuilder sb = new StringBuilder();
-		while(in.hasNext()) {
-		    sb.append(in.next());
-		}
-		in.close();
-		return sb.toString();		
+		return "";
 	}
 
 	@Override
 	public ArrayList<String> stringToList(String str) {
-		return new ArrayList<String>(Arrays.asList(str.split("\\s+|,\\s*|\\.\\s*")));
+		return new ArrayList<String>(Arrays.asList(str.split(" ")));
 	}
 
 	@Override
