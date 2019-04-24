@@ -55,7 +55,7 @@ public class testKT3 {
 		KTFunctions ktf = new KTFunctions();
 		ArrayList<String> myArrayList = new ArrayList<String>();
 		myArrayList.add("issi");
-		ArrayList<String> answer = ktf.wordsSortByLetter("i", 2, myArrayList);
+		ArrayList<String> answer = ktf.wordsSortByLetter('i', 2, myArrayList);
 		String answerStr = answer.get(1);
 		assertEquals(answerStr,  "issi");
 	}
