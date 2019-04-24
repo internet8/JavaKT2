@@ -25,6 +25,8 @@ public class AppController {
 				result += (word + " ");
 			}
     		
+    	} else {
+    		result = "funktsionaalsuse testimiseks kirjutage 'http://localhost:8080/input?text=loe'";
     	}
     	
     	

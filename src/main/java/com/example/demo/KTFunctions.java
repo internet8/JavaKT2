@@ -26,7 +26,7 @@ public class KTFunctions implements KT3 {
 
 	@Override
 	public ArrayList<String> stringToList(String str) {
-		return new ArrayList<String>(Arrays.asList(str.split(" ")));
+		return new ArrayList<String>(Arrays.asList(str.split("\\s+|,\\s*|\\.\\s*")));
 	}
 
 	@Override
